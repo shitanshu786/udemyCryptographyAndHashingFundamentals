@@ -5,12 +5,12 @@ public class CrackCaesarBruteForce {
 
     public static void bruteForceCrack(String cipherText){
         for( int key=0; key<ALPHABET.length(); key++){
-            StringBuilder freeText = new StringBuilder();
+            StringBuilder plainText = new StringBuilder();
             for(char ch: cipherText.toCharArray()){
                 int index = Math.floorMod(ALPHABET.indexOf(ch)-key, ALPHABET.length());
-                freeText.append(ALPHABET.charAt(index));
+                plainText.append(ALPHABET.charAt(index));
             }
-            System.out.println("for key: "+key+", freeText: "+freeText.toString());
+            System.out.println("for key: "+key+", plainText: "+plainText.toString());
         }
     }
     public static void main(String[] args) {
