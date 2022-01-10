@@ -6,12 +6,10 @@ def frequency_analysis(text):
     text = text.upper()
     freq = {}
     for letter in LETTERS:
-        freq[letter] = 0
-    
+        freq[letter] = 0 
     for letter in text:
         if letter in LETTERS:
-            freq[letter] += 1
-    
+            freq[letter] += 1   
     return freq
 
 def freq_distribution(freq):
