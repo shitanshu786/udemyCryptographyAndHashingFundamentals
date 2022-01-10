@@ -1,6 +1,6 @@
 import matplotlib.pylab as plt
 
-LETTERS = ' ,.ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def frequency_analysis(text):
     text = text.upper()

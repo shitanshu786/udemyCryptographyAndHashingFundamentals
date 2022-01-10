@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FreqAnalysis{
 
-    private static final String ALPHABET = " .,ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     private static Map<Character, Integer> frequencyAnalysis(String text){
         text = text.toUpperCase();
