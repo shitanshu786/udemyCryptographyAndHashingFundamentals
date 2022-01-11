@@ -8,7 +8,6 @@ import java.util.*;
 
 public class LanguageDetection {
     private static Set<String> words = new HashSet<>();
-    private static final String ALPHABET = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public static void loadData(){
         FileReader fileReader = null;
@@ -38,24 +37,14 @@ public class LanguageDetection {
 
     public static boolean isEnglishLanguage(String text, int threshhold){
         int matches = getCount(text);
+        // System.out.println(((float) matches / text.split(" ").length)*100);
         if(((float) matches / text.split(" ").length)*100 >= threshhold){
             return true;
         }
         return false;
     }
 
-    public static void bruteForceCrackWithLangDetection(String cipherText){
-        for( int key=0; key<ALPHABET.length(); key++){
-            StringBuilder plainText = new StringBuilder();
-            for(char ch: cipherText.toCharArray()){
-                int index = Math.floorMod(ALPHABET.indexOf(ch)-key, ALPHABET.length());
-                plainText.append(ALPHABET.charAt(index));
-            }
-            if(isEnglishLanguage(plainText.toString(), 70)){
-                System.out.format("Caesar cipher cracked, key =%d, Plain Text is: %s%n", key, plainText.toString());
-            }
-        }
-    }
+    
 
     public static void main(String[] args) {
         loadData();
@@ -65,8 +54,8 @@ public class LanguageDetection {
         System.out.println(isEnglishLanguage("This is a message", 60));
         System.out.println(isEnglishLanguage("This is a mssage", 90));
 
-        String cipherText = CaesarCipher.encrypt("I am CooL", 3);
-        bruteForceCrackWithLangDetection(cipherText);
+        // String cipherText = CaesarCipher.encrypt("This is message", 3);
+        // bruteForceCrackWithLangDetection(cipherText);
     }
 
 }
