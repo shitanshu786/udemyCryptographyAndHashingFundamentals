@@ -7,7 +7,7 @@ public class FreqAnalysis{
 
     private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    private static Map<Character, Integer> frequencyAnalysis(String text){
+    public static Map<Character, Integer> frequencyAnalysis(String text){
         text = text.toUpperCase();
         Map<Character, Integer> freq = new HashMap<>();
         for(char ch: text.toCharArray()){
@@ -18,7 +18,7 @@ public class FreqAnalysis{
         return freq;
     }
 
-    private static void showFrequencies(Map<Character, Integer> freq){
+    public static void showFrequencies(Map<Character, Integer> freq){
         for(Map.Entry<Character, Integer> entry: freq.entrySet()){
             System.out.format("Character %s has frequency %d%n", entry.getKey(), entry.getValue());
         }
