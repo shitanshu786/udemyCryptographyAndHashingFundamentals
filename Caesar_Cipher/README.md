@@ -17,3 +17,4 @@
   1. We can use a dictionary and check whether the given words are present in a dictionary or not. (these dictionaries are available on web)
   2. We can use machine learning techniques to detect languages.
      - working fine but we need a huge training dataset with english sentences 
+     - Language detector via scikit-learn
